@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # GymBeam Case Study - Web Aplikácia
 
 Jednoduchá webová aplikácia vytvorená ako súčasť výberového konania pre GymBeam.
@@ -70,3 +71,7 @@ Pre prihlásenie môžete použiť nasledujúce testovacie údaje poskytnuté Fa
 -   `/contexts`: React kontexty (AuthContext)
 -   `/public`: Statické súbory (sem patrí logo)
 -   `/types`: TypeScript typové definície
+=======
+# gymb-fakestore
+Fake GymBeam Store
+>>>>>>> 274a384333c3c64fc1c67d708b99cf4058cbce78
