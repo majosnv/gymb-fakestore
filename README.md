@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GymBeam Case Study - Web Aplikácia
 
-## Getting Started
+Jednoduchá webová aplikácia vytvorená ako súčasť výberového konania pre GymBeam.
 
-First, run the development server:
+## Cieľ
 
+Vytvoriť webovú aplikáciu pomocou React, Next.js a Tailwind CSS, ktorá zobrazuje zoznam produktov a ich detail pre prihlásených používateľov pomocou Fake Store API.
+
+## Funkčné požiadavky
+
+- Prihlásenie používateľa (registrácia je voliteľná a nie je implementovaná).
+- Zobrazenie zoznamu produktov a detailu produktu pre prihlásených používateľov.
+- Odhlásenie používateľa.
+- Operácie s košíkom nie sú súčasťou.
+
+## Ne-funkčné požiadavky
+
+- Aplikácia beží plynule v populárnych prehliadačoch.
+- Konzistentné UI pre dobrý užívateľský zážitok.
+- Zachovanie identity značky GymBeam (použité logo `gymbeam-logo.png` - **potrebné pridať manuálne do priečinka `/public`**).
+- Použitie Fake Store API ako zdroja dát.
+- Projekt je spustiteľný lokálne.
+
+## Použité technológie
+
+- [Next.js](https://nextjs.org/) (React framework)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Fake Store API](https://fakestoreapi.com/)
+
+## Inštalácia a spustenie
+
+1.  **Naklonujte repozitár (ak je k dispozícii) alebo rozbaľte súbory projektu.**
+2.  **Prejdite do koreňového adresára projektu `gymb`:**
+    ```bash
+    cd gymb
+    ```
+3.  **Nainštalujte závislosti:**
+    ```bash
+    npm install
+    # alebo
+    yarn install
+    ```
+4.  **(Manuálny krok)** Pridajte súbor s logom `gymbeam-logo.png` do priečinka `/public` v rámci `gymb`.
+5.  **Spustite vývojový server:**
 ```bash
 npm run dev
-# or
+    # alebo
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    ```
+6.  **Otvorte prehliadač** a prejdite na adresu [http://localhost:3000](http://localhost:3000).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prihlasovacie údaje (Testovacie)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Pre prihlásenie môžete použiť nasledujúce testovacie údaje poskytnuté Fake Store API:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   **Používateľské meno:** `morb_2314`
+-   **Heslo:** `83r5^_`
 
-## Learn More
+## Štruktúra projektu
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   `/app`: Hlavné stránky aplikácie (routing pomocou App Router)
+    -   `/login`: Prihlasovacia stránka
+    -   `/products`: Stránka so zoznamom produktov
+    -   `/products/[id]`: Dynamická stránka pre detail produktu
+    -   `page.tsx`: Vstupný bod aplikácie (presmerovanie)
+    -   `layout.tsx`: Hlavný layout
+-   `/components`: Znovu použiteľné React komponenty (Header, Layout)
+-   `/contexts`: React kontexty (AuthContext)
+-   `/public`: Statické súbory (sem patrí logo)
+-   `/types`: TypeScript typové definície
