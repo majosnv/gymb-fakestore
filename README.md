@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # GymBeam Case Study - Web Aplikácia
 
 Jednoduchá webová aplikácia vytvorená ako súčasť výberového konania pre GymBeam.
@@ -18,9 +17,10 @@ Vytvoriť webovú aplikáciu pomocou React, Next.js a Tailwind CSS, ktorá zobra
 
 - Aplikácia beží plynule v populárnych prehliadačoch.
 - Konzistentné UI pre dobrý užívateľský zážitok.
-- Zachovanie identity značky GymBeam (použité logo `gymbeam-logo.png` - **potrebné pridať manuálne do priečinka `/public`**).
+- Zachovanie identity značky GymBeam (použitá oranžová farba #fb5402 a logo).
 - Použitie Fake Store API ako zdroja dát.
 - Projekt je spustiteľný lokálne.
+- Responzívny dizajn s hamburger menu pre mobilné zariadenia.
 
 ## Použité technológie
 
@@ -43,14 +43,13 @@ Vytvoriť webovú aplikáciu pomocou React, Next.js a Tailwind CSS, ktorá zobra
     # alebo
     yarn install
     ```
-4.  **(Manuálny krok)** Pridajte súbor s logom `gymbeam-logo.png` do priečinka `/public` v rámci `gymb`.
-5.  **Spustite vývojový server:**
-```bash
-npm run dev
+4.  **Spustite vývojový server:**
+    ```bash
+    npm run dev
     # alebo
-yarn dev
+    yarn dev
     ```
-6.  **Otvorte prehliadač** a prejdite na adresu [http://localhost:3000](http://localhost:3000).
+5.  **Otvorte prehliadač** a prejdite na adresu [http://localhost:3000](http://localhost:3000).
 
 ## Prihlasovacie údaje (Testovacie)
 
@@ -67,11 +66,25 @@ Pre prihlásenie môžete použiť nasledujúce testovacie údaje poskytnuté Fa
     -   `/products/[id]`: Dynamická stránka pre detail produktu
     -   `page.tsx`: Vstupný bod aplikácie (presmerovanie)
     -   `layout.tsx`: Hlavný layout
--   `/components`: Znovu použiteľné React komponenty (Header, Layout)
+    -   `globals.css`: Globálne štýly
+-   `/components`: Znovu použiteľné React komponenty
+    -   `Header.tsx`: Navigačná lišta s logom a navigáciou
+    -   `Footer.tsx`: Pätička stránky s informáciami
+    -   `Layout.tsx`: Hlavný layout s header a footer
 -   `/contexts`: React kontexty (AuthContext)
--   `/public`: Statické súbory (sem patrí logo)
+-   `/public`: Statické súbory (logo, favicon, ikony)
 -   `/types`: TypeScript typové definície
-=======
-# gymb-fakestore
-Fake GymBeam Store
->>>>>>> 274a384333c3c64fc1c67d708b99cf4058cbce78
+
+## Dizajnové detaily
+
+- **Farby**: 
+  - Primárna farba: #fb5402 (oranžová GymBeam)
+  - Pozadie: biela
+  - Sekundárne prvky: čierna (banner s benefitmi)
+- **Responzívny dizajn** s prispôsobením pre mobilné zariadenia
+- **Produktové karty** s 3D efektom
+- **Benefity zobrazené** v čiernom banneri:
+  - 6M+ spokojných zákazníkov
+  - Rýchle dodanie
+  - Doprava zadarmo
+  - Široký sortiment

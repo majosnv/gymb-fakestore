@@ -27,15 +27,20 @@ const LoginPage = () => {
       });
 
       if (!response.ok) {
-        // Skúsime prečítať chybovú správu z API, ak existuje
-        let errorMessage = `Prihlásenie zlyhalo (stav: ${response.status})`;
-        try {
-          const errorData = await response.json();
-          errorMessage = errorData?.msg || errorData?.message || errorMessage;
-        } catch (jsonError) {
-          // Ignorujeme chybu pri parsovaní JSON, použijeme pôvodnú správu
+        // Ak je chyba 401 (Unauthorized), zobrazíme používateľsky prívetivejšiu správu
+        if (response.status === 401) {
+          throw new Error('Prihlásenie do účtu bolo nesprávne');
+        } else {
+          // Pre iné chyby zachováme pôvodné správanie
+          let errorMessage = `Prihlásenie zlyhalo (stav: ${response.status})`;
+          try {
+            const errorData = await response.json();
+            errorMessage = errorData?.msg || errorData?.message || errorMessage;
+          } catch (jsonError) {
+            // Ignorujeme chybu pri parsovaní JSON, použijeme pôvodnú správu
+          }
+          throw new Error(errorMessage);
         }
-        throw new Error(errorMessage);
       }
 
       const data = await response.json();
@@ -55,11 +60,11 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <div className="bg-gray-100 p-4 border-b border-gray-200">
-        <div className="container mx-auto flex justify-between items-center">
+        <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <Link href="/" className="flex items-center">
-            <Image src="/gymbeam-logo.png" alt="GymBeam Logo" width={200} height={55} className="h-auto" priority />
+            <Image src="/gymbeam-logo.png" alt="GymBeam Logo" width={150} height={41} className="h-auto sm:w-[200px]" priority />
           </Link>
-          <div className="text-black font-medium">
+          <div className="text-black font-medium text-sm sm:text-base">
             Zavolajte nám <a href="tel:02-33-057-087"><span className="text-[#ff5500] font-bold">02 33 057 087</span></a>
           </div>
         </div>
