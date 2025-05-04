@@ -137,8 +137,8 @@ const Footer = () => {
               <p>Unter den Linden 21,</p>
               <p>10117 Berlín, Germany</p>
               <div className="pt-4">
-                <p>02 33 057 087</p>
-                <p>info@gymbeam.sk</p>
+                <p><a href="tel:0233057087" className="hover:text-[#fb5402]">02 33 057 087</a></p>
+                <p><a href="mailto:info@gymbeam.sk" className="hover:text-[#fb5402]">info@gymbeam.sk</a></p>
               </div>
             </div>
           </div>

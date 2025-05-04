@@ -27,7 +27,6 @@ const LoginPage = () => {
       });
 
       if (!response.ok) {
-        // Ak je chyba 401 (Unauthorized), zobrazíme používateľsky prívetivejšiu správu
         if (response.status === 401) {
           throw new Error('Prihlásenie do účtu bolo nesprávne');
         } else {
@@ -37,7 +36,6 @@ const LoginPage = () => {
             const errorData = await response.json();
             errorMessage = errorData?.msg || errorData?.message || errorMessage;
           } catch (jsonError) {
-            // Ignorujeme chybu pri parsovaní JSON, použijeme pôvodnú správu
           }
           throw new Error(errorMessage);
         }
@@ -72,7 +70,7 @@ const LoginPage = () => {
       
       <div className="container mx-auto p-4 flex justify-center items-center flex-grow">
         <div className="w-full max-w-md bg-white p-8 rounded-md shadow-sm">
-          <h1 className="text-2xl font-bold text-[#ff5500] mb-6">Prihlásenie užívateľa</h1>
+          <h1 className="text-2xl font-bold text-[#ff5500] mb-6">Prihlásenie používateľa</h1>
           
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
