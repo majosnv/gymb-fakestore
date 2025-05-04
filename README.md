@@ -1,54 +1,45 @@
 # GymBeam Case Study - Web Aplikácia
 
-Jednoduchá webová aplikácia vytvorená ako súčasť výberového konania pre GymBeam.
+Jednoduchá webová aplikácia vytvorená pre GymBeam.
 
 ## Cieľ
 
 Vytvoriť webovú aplikáciu pomocou React, Next.js a Tailwind CSS, ktorá zobrazuje zoznam produktov a ich detail pre prihlásených používateľov pomocou Fake Store API.
 
-## Funkčné požiadavky
-
-- Prihlásenie používateľa (registrácia je voliteľná a nie je implementovaná).
-- Zobrazenie zoznamu produktov a detailu produktu pre prihlásených používateľov.
-- Odhlásenie používateľa.
-- Operácie s košíkom nie sú súčasťou.
-
-## Ne-funkčné požiadavky
-
-- Aplikácia beží plynule v populárnych prehliadačoch.
-- Konzistentné UI pre dobrý užívateľský zážitok.
-- Zachovanie identity značky GymBeam (použitá oranžová farba #fb5402 a logo).
-- Použitie Fake Store API ako zdroja dát.
-- Projekt je spustiteľný lokálne.
-- Responzívny dizajn s hamburger menu pre mobilné zariadenia.
-
 ## Použité technológie
 
-- [Next.js](https://nextjs.org/) (React framework)
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Fake Store API](https://fakestoreapi.com/)
+- [Next.js]
+- [React]
+- [Tailwind CSS]
+- [TypeScript]
+- [Fake Store API]
 
 ## Inštalácia a spustenie
 
-1.  **Naklonujte repozitár (ak je k dispozícii) alebo rozbaľte súbory projektu.**
-2.  **Prejdite do koreňového adresára projektu `gymb`:**
+1.  **Naklonujte repozitár z GitHubu:**
     ```bash
-    cd gymb
+    git clone https://github.com/majosnv/gymb-fakestore.git
     ```
+
+2.  **Prejdite do koreňového adresára projektu:**
+    ```bash
+    cd gymb-fakestore
+    ```
+
 3.  **Nainštalujte závislosti:**
     ```bash
     npm install
     # alebo
     yarn install
     ```
+
 4.  **Spustite vývojový server:**
     ```bash
     npm run dev
     # alebo
     yarn dev
     ```
+
 5.  **Otvorte prehliadač** a prejdite na adresu [http://localhost:3000](http://localhost:3000).
 
 ## Prihlasovacie údaje (Testovacie)
@@ -71,9 +62,19 @@ Pre prihlásenie môžete použiť nasledujúce testovacie údaje poskytnuté Fa
     -   `Header.tsx`: Navigačná lišta s logom a navigáciou
     -   `Footer.tsx`: Pätička stránky s informáciami
     -   `Layout.tsx`: Hlavný layout s header a footer
--   `/contexts`: React kontexty (AuthContext)
+-   `/contexts`: React kontexty
+    -   `AuthContext.tsx`: Kontext pre správu autentifikácie používateľa
 -   `/public`: Statické súbory (logo, favicon, ikony)
+    -   `gymbeam-logo.png`: Logo GymBeam
+    -   `favicon.png`: Ikona stránky
+    -   ďalšie SVG ikony pre UI komponenty
 -   `/types`: TypeScript typové definície
+    -   `index.ts`: Definície typov pre produkty a používateľa
+-   Konfiguračné súbory:
+    -   `package.json`: Závislosti projektu a skripty
+    -   `tsconfig.json`: Nastavenia TypeScript
+    -   `next.config.ts`: Konfigurácia Next.js
+    -   `postcss.config.mjs`: Konfigurácia PostCSS pre Tailwind
 
 ## Dizajnové detaily
 
@@ -83,8 +84,10 @@ Pre prihlásenie môžete použiť nasledujúce testovacie údaje poskytnuté Fa
   - Sekundárne prvky: čierna (banner s benefitmi)
 - **Responzívny dizajn** s prispôsobením pre mobilné zariadenia
 - **Produktové karty** s 3D efektom
-- **Benefity zobrazené** v čiernom banneri:
-  - 6M+ spokojných zákazníkov
-  - Rýchle dodanie
-  - Doprava zadarmo
-  - Široký sortiment
+
+## Vývoj a rozšírenie
+
+Pre rozšírenie projektu:
+1. Pridať funkcionalitu košíka a objednávok
+2. Implementovať registráciu nových používateľov
+3. Rozšíriť detaily produktu o recenzie a hodnotenia

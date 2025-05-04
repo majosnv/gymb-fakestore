@@ -6,7 +6,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "GymBeam Store",
+  title: "GymBeam Case Study",
   description: "Case study for GymBeam",
   icons: {
     icon: '/favicon.png',
