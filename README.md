@@ -1,7 +1,7 @@
 # GymBeam Case Study - Web Aplikácia
 
 Jednoduchá webová aplikácia vytvorená pre GymBeam.
-Live demo: https://gymb-fakestore.netlify.app/login
+Live demo: https://gymb-fakestore.netlify.app/
 
 ## Cieľ
 
